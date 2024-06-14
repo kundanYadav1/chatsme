@@ -1,48 +1,39 @@
-const GenderRadioButtons = () => {
-    return (
-      <div className="flex">
-        <div className="form-control">
-          <label className={'label gap-2 cursor-pointer'}>
-            <input type="radio" name="gender" value="male" className="border-slate-900" />
-            <span className="label-text text-white">Male</span>
-          </label>
-        </div>
-        <div className="form-control">
-          <label className={'label gap-2 cursor-pointer'}>
-            <input type="radio" name="gender" value="female" className="border-slate-900" />
-            <span className="label-text text-white">Female</span>
-          </label>
-        </div>
-        
+const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
+  return (
+    <div className="flex">
+      <div className="form-control">
+        <label
+          className={`label gap-2 cursor-pointer ${
+            selectedGender === "male" ? "selected" : ""
+          }`}
+        >
+          <span className="label-text text-white">Male</span>
+          <input
+            type="checkbox"
+            className="checkbox border-slate-900"
+            checked={selectedGender === "male"}
+            onChange={() => onCheckboxChange("male")}
+          />
+        </label>
       </div>
-    )
-  }
-  
-  export default GenderRadioButtons;
+      <div className="form-control">
+        <label
+          className={`label gap-2 cursor-pointer ${
+            selectedGender === "female" ? "selected" : ""
+          }`}
+        >
+          <span className="label-text text-white">Female</span>
+          <input
+            type="checkbox"
+            className="checkbox border-slate-900"
+            checked={selectedGender === "female"}
+            onChange={() => onCheckboxChange("female")}
+          />
+        </label>
+      </div>
+    </div>
+  );
+};
+export default GenderCheckbox;
 
 
-
-//  STARTER CODE FOR THIS FILE
-//   const GenderRadioButtons = () => {
-//     return (
-//       <div className="flex">
-//         <div className="form-control">
-//           <label className={'label gap-2 cursor-pointer'}>
-//             <input type="radio" name="gender" value="male" className="border-slate-900" />
-//             <span className="label-text text-white">Male</span>
-//           </label>
-//         </div>
-//         <div className="form-control">
-//           <label className={'label gap-2 cursor-pointer'}>
-//             <input type="radio" name="gender" value="female" className="border-slate-900" />
-//             <span className="label-text text-white">Female</span>
-//           </label>
-//         </div>
-        
-//       </div>
-//     )
-//   }
-  
-//   export default GenderRadioButtons;
-  
-  
